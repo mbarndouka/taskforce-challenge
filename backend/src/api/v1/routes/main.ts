@@ -9,7 +9,6 @@ import transactionRoutes from './transactionRoutes';
 import welcomeController from '../controllers/welcome.controller';
 import authRoutes from './auth.routes';
 import accountRoutes from './accountRoutes';
-import { authenticateToken } from '../middleware/auth.middleware';
 
 const apiV1 = Router();
 
@@ -21,8 +20,6 @@ apiV1.get('/', (req, res) => {
 apiV1.get('/welcome', welcomeController);
 apiV1.use('/auth', authRoutes);
 apiV1.use('/user', userRoutes);
-
-apiV1.use(authenticateToken);
 apiV1.use('/budget', budgetRoutes);
 apiV1.use('/account', accountRoutes);
 apiV1.use('/expense', expenseRoutes);

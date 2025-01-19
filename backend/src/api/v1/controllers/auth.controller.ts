@@ -1,20 +1,25 @@
 import { Request, Response } from 'express';
-import authService from '../services/auth.service';
+import AuthService from '../services/auth.service';
 
 class AuthController {
+  private authService: AuthService;
+  constructor(authService: AuthService) {
+    this.authService = authService;
+  }
   async register(req: Request, res: Response) {
     const { name, email, password } = req.body;
-    const token = await authService.register(name, email, password);
+    const token = await this.authService.register(name, email, password);
     res.status(201).json({ token });
   }
   async login(req: Request, res: Response) {
     const { email, password } = req.body;
-    const user = await authService.login(email, password);
-    if (!user) {
-      res.status(400).json({ message: 'Invalid email or password' });
-      return;
+    try {
+      const token = await this.authService.login(email, password);
+      res.status(200).json({ token });
+    } catch (error) {
+      res.status(401).json({ error: error });
     }
   }
 }
 
-export default new AuthController();
+export default AuthController;

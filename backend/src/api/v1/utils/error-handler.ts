@@ -38,3 +38,5 @@ export class ErrorHandler {
     }
   }
 }
+
+export { logger };
