@@ -16,7 +16,7 @@ export const fakeAuth = {
   },
 
   // Sign up
-  signUp: async (email: string, password: string) => {
+  signUp: async (name: string, email: string, password: string) => {
     await simulateDelay(500); // Simulate network delay
     isAuthenticated = true;
     return { success: true };

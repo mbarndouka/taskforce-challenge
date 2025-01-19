@@ -1,10 +1,9 @@
-import Footer from "@/src/components/Footer";
-import Header from "@/src/components/Header";
 import Head from "next/head";
+import Link from "next/link";
 
-const Home = () => {
+const Dashboard = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col">
       <Head>
         <title>Task Force Pro Wallet</title>
         <meta
@@ -13,10 +12,7 @@ const Home = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Header />
-
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow  mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-8">
           Welcome to Task Force Pro Wallet
         </h1>
@@ -26,42 +22,42 @@ const Home = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <a
-            href="/transactions"
+          <Link
+            href="/dashboard/transactions"
             className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <h2 className="text-2xl font-semibold mb-2">Transactions &rarr;</h2>
             <p className="text-gray-600">Add and manage your transactions.</p>
-          </a>
+          </Link>
 
-          <a
-            href="/budget"
+          <Link
+            href="/dashboard/budget"
             className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <h2 className="text-2xl font-semibold mb-2">Budget &rarr;</h2>
             <p className="text-gray-600">Set and track your budget.</p>
-          </a>
+          </Link>
 
-          <a
-            href="/reports"
+          <Link
+            href="/dashboard/reports"
             className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <h2 className="text-2xl font-semibold mb-2">Reports &rarr;</h2>
             <p className="text-gray-600">Generate detailed reports.</p>
-          </a>
+          </Link>
 
-          <a
-            href="/categories"
+          <Link
+            href="/dashboard/categories"
             className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <h2 className="text-2xl font-semibold mb-2">Categories &rarr;</h2>
             <p className="text-gray-600">
               Manage your categories and subcategories.
             </p>
-          </a>
+          </Link>
 
-          <a
-            href="/visualization"
+          <Link
+            href="/dashboard/visualization"
             className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow"
           >
             <h2 className="text-2xl font-semibold mb-2">
@@ -70,13 +66,11 @@ const Home = () => {
             <p className="text-gray-600">
               View your transactions in charts and graphs.
             </p>
-          </a>
+          </Link>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
 
-export default Home;
+export default Dashboard;

@@ -1,7 +1,5 @@
 "use client";
 import CategoryForm from "@/src/components/CategoryForm";
-import Footer from "@/src/components/Footer";
-import Header from "@/src/components/Header";
 import { useState } from "react";
 
 export default function Categories() {
@@ -13,7 +11,6 @@ export default function Categories() {
 
   return (
     <>
-      <Header />
       <h1 className="text-2xl font-bold text-center my-6">Categories</h1>
       <div className="container mx-auto px-4">
         <CategoryForm addCategory={addCategory} />
@@ -25,7 +22,6 @@ export default function Categories() {
           ))}
         </ul>
       </div>
-      <Footer />
     </>
   );
 }

@@ -52,5 +52,5 @@ export default function Visualization() {
     },
   };
 
-  return <Bar data={data} />;
+  return <Bar data={data} options={options} />;
 }

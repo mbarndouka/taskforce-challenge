@@ -1,6 +1,4 @@
 "use client";
-import Footer from "@/src/components/Footer";
-import Header from "@/src/components/Header";
 import TransactionForm from "@/src/components/TransactionForm";
 import TransactionList from "@/src/components/TransactionList";
 import { fakeApi } from "@/src/services/fakeApi";
@@ -28,13 +26,11 @@ export default function Transactions() {
 
   return (
     <>
-      <Header />
       <h1 className="text-2xl font-bold text-center my-6">Transactions</h1>
       <div className="container mx-auto px-4">
         <TransactionForm addTransaction={addTransaction} />
         <TransactionList transactions={transactions} onDelete={handleDelete} />
       </div>
-      <Footer />
     </>
   );
 }
