@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  title: Auth API Documentation
+  version: 1.0.0
+  description: API documentation for authentication and related endpoints.
+servers:
+  - url: http://localhost:3000/api/v1
+
+paths:
+  /welcome:
+    get:
+      summary: Welcome endpoint
+      description: Returns a welcome message for the documentation
+      tags:
+        - Welcome
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Welcome to docs'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: 'Internal server error'

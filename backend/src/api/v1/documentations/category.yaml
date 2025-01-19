@@ -1,0 +1,34 @@
+paths:
+  /categories:
+    post:
+      summary: Create a new category
+      tags: [Categories]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        201:
+          description: Category created successfully
+        400:
+          description: Bad request
+  /categories/{id}:
+    get:
+      summary: Get a category by ID
+      tags: [Categories]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: Category ID
+      responses:
+        200:
+          description: Category found
+        404:
+          description: Category not found
+        400:
+          description: Bad request
