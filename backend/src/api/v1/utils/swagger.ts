@@ -17,6 +17,11 @@ const options: Options = {
     servers: [
       {
         url: 'http://localhost:3000/api/v1',
+        description: 'Development server',
+      },
+      {
+        url: 'https://taskforce-challenge-6eae.onrender.com/api/v1',
+        description: 'Production server',
       },
     ],
     components: {
