@@ -1,0 +1,32 @@
+paths:
+  /transactions:
+    post:
+      summary: Create a new transaction
+      tags: [Transactions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transaction'
+      responses:
+        201:
+          description: Transaction created successfully
+        400:
+          description: Bad request
+  /transactions/account/{accountId}:
+    get:
+      summary: Get transactions by account ID
+      tags: [Transactions]
+      parameters:
+        - in: path
+          name: accountId
+          schema:
+            type: integer
+          required: true
+          description: Account ID
+      responses:
+        200:
+          description: List of transactions
+        400:
+          description: Bad request

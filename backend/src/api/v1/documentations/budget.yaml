@@ -1,0 +1,33 @@
+paths:
+  /Budget:
+    post:
+      summary: Create a new budget
+      tags: [Budgets]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Budget'
+      responses:
+        201:
+          description: Budget created successfully
+        400:
+          description: Bad request
+    get:
+      summary: Get a budget by user ID
+      tags: [Budgets]
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: integer
+          required: true
+          description: User ID
+      responses:
+        200:
+          description: Budget found
+        404:
+          description: Budget not found
+        400:
+          description: Bad request

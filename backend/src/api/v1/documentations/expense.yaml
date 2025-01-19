@@ -1,0 +1,32 @@
+paths:
+  /expenses:
+    post:
+      summary: Create a new expense
+      tags: [Expenses]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+      responses:
+        201:
+          description: Expense created successfully
+        400:
+          description: Bad request
+  /expenses/user/{userId}:
+    get:
+      summary: Get expenses by user ID
+      tags: [Expenses]
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: integer
+          required: true
+          description: User ID
+      responses:
+        200:
+          description: List of expenses
+        400:
+          description: Bad request
