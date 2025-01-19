@@ -19,7 +19,8 @@ app.use(express.json());
 app.use(cors(
   {
     origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: ['GET','PUT','PATCH','POST','DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     preflightContinue: false,
     optionsSuccessStatus: 204,
   }
