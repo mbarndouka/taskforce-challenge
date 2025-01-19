@@ -16,6 +16,7 @@ export const fakeAuth = {
   },
 
   // Sign up
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   signUp: async (name: string, email: string, password: string) => {
     await simulateDelay(500); // Simulate network delay
     isAuthenticated = true;

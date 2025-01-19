@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function Budget() {
   const [budget, setBudget] = useState<number>(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [expenses, setExpenses] = useState<number>(0);
 
   useEffect(() => {

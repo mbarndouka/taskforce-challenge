@@ -5,7 +5,14 @@ import { fakeApi } from "@/src/services/fakeApi";
 import { useEffect, useState } from "react";
 
 export default function Transactions() {
-  const [transactions, setTransactions] = useState<any[]>([]);
+  interface Transaction {
+    id: string;
+    amount: number;
+    date: string;
+    description: string;
+  }
+
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
     const fetchTransactions = async () => {
@@ -15,7 +22,7 @@ export default function Transactions() {
     fetchTransactions();
   }, []);
 
-  const addTransaction = async (transaction: any) => {
+  const addTransaction = async (transaction: Transaction) => {
     const newTransaction = await fakeApi.addTransaction(transaction);
     setTransactions([...transactions, newTransaction]);
   };

@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "eslintConfig": {
+    "extends": "./eslint.config.mjs"
+  },
   "dependencies": {
     "chart.js": "^4.4.7",
     "next": "15.1.5",
