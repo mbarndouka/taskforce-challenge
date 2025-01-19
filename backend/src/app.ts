@@ -16,7 +16,15 @@ const loggingFormat =
   process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin: '*',
+    methods: ['GET','PUT','PATCH','POST','DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  }
+));
 app.use(morgan(loggingFormat));
 
 connectDB()
